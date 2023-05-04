@@ -40,6 +40,8 @@
 
     ];
 
+    $feature = []
+
     
 
 ?>
@@ -70,15 +72,17 @@ foreach ($hotels as $hotel) {
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Key</th>
-      <th>Value</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Parking</th>
+      <th>Vote</th>
+      <th>Distance to center</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($hotels as $hotel) { ?>
       <tr>
         <?php foreach ($hotel as $key => $value) { ?>
-          <td><?php echo $key; ?></td>
           <td><?php echo $value; ?></td>
         <?php } ?>
       </tr>
