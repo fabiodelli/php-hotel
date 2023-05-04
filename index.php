@@ -55,18 +55,39 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
+
 <?php
 
 foreach ($hotels as $hotel) {
     foreach ($hotel as $key => $value) {
       echo $key . ': ' . $value . '<br>';
     }
-    echo '<br>'; // Aggiungi una riga vuota tra ogni hotel
+    echo '<br>';
   }
   
-    ?>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="./assets/js/main.js"></script>
+?>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($hotels as $hotel) { ?>
+      <tr>
+        <?php foreach ($hotel as $key => $value) { ?>
+          <td><?php echo $key; ?></td>
+          <td><?php echo $value; ?></td>
+        <?php } ?>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
+
+
+    
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
