@@ -40,7 +40,7 @@
 
     ];
 
-    $feature = []
+    $features = ["Name","Description","ParkingVote","Distance to center"]
 
     
 
@@ -72,6 +72,11 @@ foreach ($hotels as $hotel) {
 <table class="table table-bordered">
   <thead>
     <tr>
+        <?php foreach ($features as $feature) {
+           <th>Name</th>
+        } 
+
+        ?>
       <th>Name</th>
       <th>Description</th>
       <th>Parking</th>
