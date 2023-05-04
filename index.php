@@ -4,35 +4,35 @@
 
         [
             'name' => 'Hotel Belvedere',
-            'description' => 'Hotel Belvedere Descrizione',
+            'description' => 'Hotel Belvedere ',
             'parking' => true,
             'vote' => 4,
             'distance_to_center' => 10.4
         ],
         [
             'name' => 'Hotel Futuro',
-            'description' => 'Hotel Futuro Descrizione',
+            'description' => 'Hotel Futuro ',
             'parking' => true,
             'vote' => 2,
             'distance_to_center' => 2
         ],
         [
             'name' => 'Hotel Rivamare',
-            'description' => 'Hotel Rivamare Descrizione',
+            'description' => 'Hotel Rivamare ',
             'parking' => false,
             'vote' => 1,
             'distance_to_center' => 1
         ],
         [
             'name' => 'Hotel Bellavista',
-            'description' => 'Hotel Bellavista Descrizione',
+            'description' => 'Hotel Bellavista ',
             'parking' => false,
             'vote' => 5,
             'distance_to_center' => 5.5
         ],
         [
             'name' => 'Hotel Milano',
-            'description' => 'Hotel Milano Descrizione',
+            'description' => 'Hotel Milano ',
             'parking' => true,
             'vote' => 2,
             'distance_to_center' => 50
@@ -54,20 +54,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
 
-<?php
 
-foreach ($hotels as $hotel) {
-    foreach ($hotel as $key => $value) {
-      echo $key . ': ' . $value . '<br>';
-    }
-    echo '<br>';
-  }
-  
-?>
 
 <table class="table table-bordered">
   <thead>
@@ -78,13 +70,26 @@ foreach ($hotels as $hotel) {
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($hotels as $hotel) { ?>
-      <tr>
-        <?php foreach ($hotel as $key => $value) { ?>
-          <td><?php echo $value; ?></td>
-        <?php } ?>
-      </tr>
-    <?php } ?>
+  <?php 
+  foreach ($hotels as $hotel) {
+    
+    echo "<tr>";
+    echo "<td>{$hotel['name']}</td>";
+    echo "<td>{$hotel['description']}</td>";
+    if ($hotel['parking'] == false) {
+      echo "<td><i class='fa-solid fa-x'></i></td>";
+    }
+    else {
+      echo "<td><i class='fa-solid fa-check'></i></td>";
+    }
+    echo "<td>{$hotel['parking']}</td>";
+    echo "<td>{$hotel['vote']}</td>";
+    echo "<td>{$hotel['distance_to_center']}</td>";
+    echo "</tr>";
+}
+echo "</tbody>";
+echo "</table>";
+?>
   </tbody>
 </table>
 
